@@ -45,6 +45,10 @@
     "streambuf": "cpp",
     "cinttypes": "cpp",
     "typeinfo": "cpp",
-    "bit": "cpp"
+    "bit": "cpp",
+    "chrono": "cpp",
+    "ctime": "cpp",
+    "unordered_set": "cpp",
+    "ratio": "cpp"
   }
 }
