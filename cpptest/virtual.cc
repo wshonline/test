@@ -1,31 +1,27 @@
 #include <iostream>
 
-class A {
-public:
-  void init() {
-    std::cout << "base init" << std::endl;
-  }
+class Base {
+ public:
+  virtual void Print1() { std::cout << 1 << std::endl; };
+  virtual void Print2() { std::cout << 2 << std::endl; };
 
-  virtual void init_vir() {
-    std::cout << "base init on virtual" << std::endl;
-  }
 };
 
-class B : public A {
-public:
-  void init() {
-    std::cout << "derived init" << std::endl;
-  }
+class Derived : public Base {
+ public:
+  virtual void Print1() { std::cout << 1.1 << std::endl; };
+  void Print2() { std::cout << 2.2 << std::endl; };  // 基类是vir, 子类都是vir的（不论是否有显式地加上vir）
+};
 
-  virtual void init_vir() {
-    std::cout << "derived init on virtual" << std::endl;
-  }
+class Derived2 : public Derived {
+ public:
+  void Print2() { std::cout << 2.22 << std::endl; };  // Derived的Print2虽不带vir, 但仍然是vir的，仍然保持多态
 };
 
 int main() {
-  A *b = new B;
-  b->init();
-  b->init_vir();
+  Base *obj = new Derived2;
+  obj->Print1();
+  obj->Print2();
 
   return 0;
 }
