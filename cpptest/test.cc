@@ -1,4 +1,5 @@
 #include <iostream>
+
 class A {
 public:
   virtual void reset() { std::cout << "123"; }
