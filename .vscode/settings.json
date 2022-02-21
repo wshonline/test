@@ -54,6 +54,17 @@
     "condition_variable": "cpp",
     "map": "cpp",
     "regex": "cpp",
-    "shared_mutex": "cpp"
+    "shared_mutex": "cpp",
+    "strstream": "cpp",
+    "complex": "cpp",
+    "forward_list": "cpp",
+    "list": "cpp",
+    "iomanip": "cpp",
+    "mutex": "cpp",
+    "thread": "cpp",
+    "cfenv": "cpp",
+    "typeindex": "cpp",
+    "set": "cpp",
+    "variant": "cpp"
   }
 }
