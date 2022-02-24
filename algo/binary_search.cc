@@ -8,17 +8,21 @@ bool check(int mid) {
 
 // mid属于左半边, 区间划分成[l, mid]和[mid + 1, r]
 int search_1(int l, int r) {
-  int mid = l + r >> 1;
-  if (check(mid)) { r = mid; }
-  else { l = mid + 1; }
+  while (l < r) {
+    int mid = l + r >> 1;
+    if (check(mid)) { r = mid; }
+    else { l = mid + 1; }  
+  }
   return l;
 }
 
 // mid属于右半边, 区间划分成[l, mid - 1]和[mid, r]
 int search_2(int l, int r) {
-  int mid = l + r + 1 >> 1;
-  if (check(mid)) { l = mid; }
-  else { r = mid - 1; }
+  while (l < r) {
+    int mid = l + r + 1 >> 1;
+    if (check(mid)) { l = mid; }
+    else { r = mid - 1; }
+  }
   return l;
 }
 
