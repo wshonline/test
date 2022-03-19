@@ -8,7 +8,7 @@
       "name": "(gdb) Launch",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/algo/a.out",
+      "program": "${workspaceFolder}/echo_server/cli",
       "args": [],
       "stopAtEntry": false,
       "cwd": "${fileDirname}",
