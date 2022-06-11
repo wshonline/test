@@ -14,9 +14,50 @@ class Slice {
   size_t size_;
 };
 
+class A {
+ public:
+  A() {
+    std::cout << "constructor" << std::endl;
+  }
+  
+  A(const A& a) {
+    std::cout << "copy constructor" << std::endl;
+  }
+  
+  A& operator=(const A& a) {
+    std::cout << "copy assignment" << std::endl;
+    return *this;
+  }
+
+  A func() {
+    A a;
+    return a;
+  }
+
+  A func1(A a) {
+    return a;
+  }
+
+  A func2(A& a) {
+    return a;
+  }
+
+};
+
 int main() {
-  Slice s;
-  Slice *s1 = new Slice;
-  Slice *s2 = new Slice();
+  // Slice s;
+  // Slice *s1 = new Slice;
+  // Slice *s2 = new Slice();
+
+  A a1;
+  A a2 = a1.func();  
+  std::cout << std::endl;
+
+  A a3;
+  A a4 = a3.func1(a3);
+  std::cout << std::endl;
+
+  A a5;
+  A a6 = a5.func2(a5);
   return 0;
 }
