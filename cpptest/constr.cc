@@ -16,16 +16,26 @@ class Slice {
 
 class A {
  public:
+  // 默认构造函数
   A() {
     std::cout << "constructor" << std::endl;
   }
   
+  // 拷贝构造、拷贝赋值
   A(const A& a) {
     std::cout << "copy constructor" << std::endl;
   }
-  
   A& operator=(const A& a) {
     std::cout << "copy assignment" << std::endl;
+    return *this;
+  }
+
+  // 移动构造、移动赋值
+  A(const A&& a) {
+    std::cout << "move constructor" << std::endl;
+  }
+  A& operator=(const A&& a) {
+    std::cout << "move assignment" << std::endl;
     return *this;
   }
 
@@ -50,7 +60,7 @@ int main() {
   // Slice *s2 = new Slice();
 
   A a1;
-  A a2 = a1.func();  
+  A a2 = a1.func();
   std::cout << std::endl;
 
   A a3;
