@@ -8,7 +8,7 @@
       "name": "(gdb) Launch",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/cpptest/a.out",
+      "program": "${workspaceFolder}/cpptest/RVO/a.out",
       "args": [],
       "stopAtEntry": false,
       "cwd": "${fileDirname}",
