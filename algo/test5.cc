@@ -44,10 +44,11 @@ std::vector<int> func(std::vector<std::vector<int>> &input) {
 }
 
 int main() {
-  std::vector<std::vector<int>> input = {{1,2,3,4},{5,6,7,8,},{9,10,11,12} };
+  std::vector<std::vector<int>> input = {{1,2,3,4},{5,6,7,8,},{9,10,11,12}};
     std::vector<int> ret = func(input);
     for (auto n : ret) {
-      std::cout << n << " " << std::endl;
+      std::cout << n << " ";
     }
+    std::cout << std::endl;
     return 0;
 }
