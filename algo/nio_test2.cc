@@ -6,29 +6,26 @@
 
 void func(std::vector<int> &nums) {
   int l = 0, r = nums.size() - 1;
-  // 第一趟把0都放前面
-  while (l < r) {
-    while (l < r && nums[l] == 0) l++;
-    while (l < r && nums[r] != 0) r--;
-    if (l < r) {
-      std::swap(nums[l], nums[r]);
+  int cur = 0;
+  while (l < r && cur < r) {
+    if (nums[cur] == 0) {
+      if(cur == l) {
+        cur++;
+        l++;
+        continue;
+      }
+      std::swap(nums[cur], nums[l++]);
     }
-  }
-  // 跳过前面的0
-  l = 0, r = nums.size() - 1;
-  while (l < r && nums[l] == 0) l++;
-  // 第二趟把2都放后面
-  while (l < r) {
-    while (l < r && nums[l] == 1) l++;
-    while (l < r && nums[r] == 2) r--;
-    if (l < r) {
-      std::swap(nums[l], nums[r]);
+    else if (nums[cur] == 2) {
+        // if(cur == r) break;
+        std::swap(nums[cur], nums[r--]);
     }
+    else cur++;
   }
 }
 
 int main() {
-  std::vector<int> nums{2, 0, 1, 2, 1, 0};
+  std::vector<int> nums{2, 2, 1, 2, 1, 0, 2};
   func(nums);
   return 0;
 }
